@@ -1,0 +1,1333 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>eXp Splits — UX case study by Suvarna Myneni</title>
+    <meta
+      name="description"
+      content="How Suvarna Myneni designed a guided commission-splits and disbursement (DA) flow, and the wider My eXp agent app around it, for eXp Realty agents on web and mobile."
+    />
+    <meta name="author" content="Suvarna Myneni" />
+    <link rel="canonical" href="https://suvarnamyneni-project.github.io/splits-case-study/" />
+    <meta property="og:title" content="eXp Splits — UX case study by Suvarna Myneni" />
+    <meta
+      property="og:description"
+      content="A guided commission-splits and disbursement authorization flow for eXp Realty agents, inside the My eXp agent app."
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://suvarnamyneni-project.github.io/splits-case-study/" />
+    <meta property="og:image" content="https://suvarnamyneni-project.github.io/splits-case-study/assets/00-cover.webp" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,560;9..144,600&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <main id="main" tabindex="-1">
+      <header class="hero wrap">
+        <p class="eyebrow">UX case study</p>
+        <p class="byline">Suvarna Myneni · AI-Native UX Designer, eXp Realty</p>
+        <h1>eXp Splits</h1>
+        <p class="deck">
+          How Suvarna Myneni designed a guided commission-splits and disbursement (DA) flow, and the
+          wider My eXp agent app around it, for eXp Realty agents on web and mobile.
+        </p>
+        <p class="gap-note">
+          Items marked <mark class="todo">[Add: …]</mark> are facts the Figma file does not contain
+          and still need to be filled in.
+        </p>
+        <dl class="hero-meta">
+          <div>
+            <dt>Role</dt>
+            <dd>
+              <mark class="todo">[Add: what you owned vs. Pranjali, e.g. splits flow, mobile, design system]</mark>
+            </dd>
+          </div>
+          <div>
+            <dt>Team</dt>
+            <dd>Designers Suvarna Myneni and Pranjali Binwani. Project manager Sanjay Patel.</dd>
+          </div>
+          <div>
+            <dt>Timeline</dt>
+            <dd>
+              Design started September 13th, 2023. End date:
+              <mark class="todo">[Add: end or launch date]</mark>
+            </dd>
+          </div>
+          <div>
+            <dt>Tools</dt>
+            <dd>
+              Figma (wireframes, UI, design system, prototypes).
+              <mark class="todo">[Add: any other tools actually used]</mark>
+            </dd>
+          </div>
+        </dl>
+        <figure class="shot">
+          <a class="shot-open" href="assets/00-cover.webp" data-lightbox>
+            <span class="visually-hidden">Enlarge. </span>
+            <img
+              src="assets/00-cover.webp"
+              width="1024"
+              height="555"
+              alt="Project cover for the eXp Realty Web App, project T2023-6308, naming designers Suvarna Myneni and Pranjali Binwani, project manager Sanjay Patel, and a September 13th, 2023 start."
+              fetchpriority="high"
+            />
+            <span class="shot-badge" aria-hidden="true">Enlarge</span>
+          </a>
+          <figcaption>
+            Project cover from the file: eXp Realty Web App, T2023-6308. Designers Suvarna Myneni
+            and Pranjali Binwani, project manager Sanjay Patel, design started September 13th, 2023.
+            Select any screen to enlarge it.
+          </figcaption>
+        </figure>
+      </header>
+
+      <div class="shell wrap">
+        <nav class="toc" aria-label="Case study sections">
+          <p class="toc-label" id="toc-label">Contents</p>
+          <ol aria-labelledby="toc-label">
+            <li><a href="#overview" aria-current="true"><span>01</span> Overview</a></li>
+            <li><a href="#problem"><span>02</span> Problem</a></li>
+            <li><a href="#personas"><span>03</span> Personas</a></li>
+            <li><a href="#research"><span>04</span> Research</a></li>
+            <li><a href="#goals"><span>05</span> Goals</a></li>
+            <li><a href="#process"><span>06</span> Process</a></li>
+            <li><a href="#flow"><span>07</span> The flow</a></li>
+            <li><a href="#decisions"><span>08</span> Decisions</a></li>
+            <li><a href="#walkthrough"><span>09</span> Designs</a></li>
+            <li><a href="#platform"><span>10</span> The app</a></li>
+            <li><a href="#outcomes"><span>11</span> Outcomes</a></li>
+            <li><a href="#learnings"><span>12</span> Learnings</a></li>
+            <li><a href="#gaps"><span>13</span> Still to add</a></li>
+            <li><a href="#appendix"><span>14</span> Appendix</a></li>
+          </ol>
+        </nav>
+
+        <div class="content">
+          <section id="overview">
+            <p class="kicker">01 — Overview</p>
+            <h2>Overview</h2>
+            <dl class="spec">
+              <div>
+                <dt>Case study by</dt>
+                <dd>Suvarna Myneni</dd>
+              </div>
+              <div>
+                <dt>Product</dt>
+                <dd>
+                  My eXp: an agent-facing web and mobile app for eXp Realty agents (file cover: “eXp
+                  Realty Web App”, project ID T2023-6308)
+                </dd>
+              </div>
+              <div>
+                <dt>Focus of this study</dt>
+                <dd>
+                  Splits: the commission-splits form, Disbursement Authorization (DA) review, and
+                  settlement notifications in the Transaction module
+                </dd>
+              </div>
+              <div>
+                <dt>Designers (per file cover)</dt>
+                <dd>Suvarna Myneni, Pranjali Binwani</dd>
+              </div>
+              <div>
+                <dt>Project manager (per file cover)</dt>
+                <dd>Sanjay Patel</dd>
+              </div>
+              <div>
+                <dt>Design started</dt>
+                <dd>
+                  September 13th, 2023 (per file cover). End date:
+                  <mark class="todo">[Add: end or launch date]</mark>
+                </dd>
+              </div>
+              <div>
+                <dt>My role</dt>
+                <dd>
+                  <mark class="todo">[Add: what you owned vs. Pranjali, e.g. splits flow, mobile, design system]</mark>
+                </dd>
+              </div>
+              <div>
+                <dt>Platforms</dt>
+                <dd>Responsive web (1440 / 1512 px) and iOS-size mobile (375 / 390 px)</dd>
+              </div>
+              <div>
+                <dt>Tools</dt>
+                <dd>
+                  Figma (wireframes, UI, design system, prototypes).
+                  <mark class="todo">[Add: any other tools actually used]</mark>
+                </dd>
+              </div>
+              <div>
+                <dt>Phases in the file</dt>
+                <dd>
+                  Personas → wireframes → Design (mobile, web) → Phase 2 Transaction module → Phase
+                  2 all modules → Phase 3 → Current app flow design
+                </dd>
+              </div>
+            </dl>
+          </section>
+
+          <section id="problem">
+            <p class="kicker">02 — Problem and business context</p>
+            <h2>Problem and business context</h2>
+            <p>
+              eXp agents close transactions in SkySlope, but getting paid depends on correctly
+              declaring how the commission is split: the listing commission, bonuses and
+              concessions, earnest money, transaction coordinator fees, referrals, and the split
+              between every agent on the deal. That information becomes a Disbursement
+              Authorization (DA) that goes to the title company, and only then do settlement
+              cheques and payouts follow.
+            </p>
+            <blockquote>
+              <p>
+                Splits guides you through commission split details and transmits the information to
+                the transaction in eXp Enterprise to be validated by a transaction settlement
+                specialist. You can revisit splits any time before closing to revise information.
+              </p>
+            </blockquote>
+            <ul>
+              <li>
+                The earlier flow, labelled “Old Transaction flow (with upload doc)”, made agents
+                upload documents, then fill a splits form, then review the DA, as three separate
+                tabs.
+              </li>
+              <li>
+                One early version sent agents away to a separate form: “You will be redirected to a
+                secure form to help us know more about the sales info, agents involved and agents
+                splits associated with the transaction.”
+              </li>
+              <li>
+                Solo agents with no splits still had to go through the same flow. The team’s notes
+                say: “No splits required, Skyslope remains only for settlement cheque &amp;
+                statement.”
+              </li>
+              <li>
+                Agents needed to hear about DA and settlement events even when they had not opened
+                the app: “Need push notifications… From notification the agent should be able to
+                download the DA.”
+              </li>
+            </ul>
+            <aside class="callout">
+              <p class="callout-lead">Business context to add</p>
+              <p>
+                <mark class="todo">[Add: why eXp invested in this, e.g. settlement-team workload, payout delays, DA correction rates, or agent support tickets. Use only figures you can cite.]</mark>
+              </p>
+            </aside>
+            <p>
+              The three-tab screen and the stepper that replaced it are shown side by side in
+              <a href="#compare">Final designs</a>.
+            </p>
+          </section>
+
+          <section id="personas">
+            <p class="kicker">03 — Users and personas</p>
+            <h2>Users and personas</h2>
+            <p>
+              The file defines three agent personas. They drive the role-based variants of the home
+              screen, team views and earnings screens throughout the designs.
+            </p>
+            <div class="table-wrap">
+              <table>
+                <caption>The three agent personas in the file.</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Persona</th>
+                    <th scope="col">Role</th>
+                    <th scope="col">Profile</th>
+                    <th scope="col">Core need</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Max Jones</th>
+                    <td>Team Lead, Sr. agent</td>
+                    <td>42, 14+ yrs, Florida and Alabama. Leads a team of 5 agents and mentors 5 more.</td>
+                    <td>See his team members’ statuses, including license status, and act on system notifications</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Julian Test</th>
+                    <td>Team member</td>
+                    <td>28, 1.5 yrs, Illinois. Joined Max’s team 17 days ago and became active this week.</td>
+                    <td>Learn the tools, get guidance from a mentor, report status to Max daily</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Alex Green</th>
+                    <td>Individual agent</td>
+                    <td>33, 8 yrs, Georgia and Alabama. Joined 2 days ago, license pending.</td>
+                    <td>Track clients and licensing across states, get reminders of deadlines</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="persona-grid">
+              <section>
+                <h3>Max: challenges</h3>
+                <ul>
+                  <li>No dedicated onboarding or section for team leads to view their team</li>
+                  <li>Tracking every member’s activity</li>
+                  <li>Understanding and helping mentees</li>
+                </ul>
+              </section>
+              <section>
+                <h3>Julian: challenges</h3>
+                <ul>
+                  <li>Must show proof that she is learning and growing</li>
+                  <li>Keeping track of her clientele</li>
+                </ul>
+              </section>
+              <section>
+                <h3>Alex: challenges</h3>
+                <ul>
+                  <li>Staying on top of license and document statuses</li>
+                  <li>Clients who need a lot of attention</li>
+                  <li>Little downtime</li>
+                </ul>
+              </section>
+            </div>
+            <p>
+              Each persona also comes with a lifecycle state: before becoming an active agent,
+              active for under 30 days, and active for over 30 days. Team members move through five
+              statuses, from “Application started / completed” to “Documents signed”, “Team
+              agreement signed”, “License transfer in process” and “Active”.
+            </p>
+            <figure class="shot">
+              <a class="shot-open" href="assets/01-persona-max.webp" data-lightbox>
+                <span class="visually-hidden">Enlarge. </span>
+                <img
+                  src="assets/01-persona-max.webp"
+                  width="792"
+                  height="612"
+                  alt="Persona sheet for Max Jones, team lead and senior real estate agent, with about, needs, challenges, and scenarios."
+                  loading="lazy"
+                />
+                <span class="shot-badge" aria-hidden="true">Enlarge</span>
+              </a>
+              <figcaption>
+                Persona sheet for Max Jones, team lead and senior agent, with needs, challenges, and
+                scenarios.
+              </figcaption>
+            </figure>
+          </section>
+
+          <section id="research">
+            <p class="kicker">04 — Research and inputs</p>
+            <h2>Research and inputs</h2>
+            <div class="inputs">
+              <article>
+                <h3>Persona definitions</h3>
+                <p>Three personas with needs, challenges and scenarios (page “1. Personas”).</p>
+              </article>
+              <article>
+                <h3>Current-product reference</h3>
+                <p>
+                  About 25 reference screenshots on the wireframes page, including the existing My
+                  eXp Revenue Share screen (FLA, FLQA, new agents, rev share levels, unpaid,
+                  expected next and last paid).
+                </p>
+              </article>
+              <article>
+                <h3>Paper sketches</h3>
+                <p>
+                  Hand-drawn flows for Max (home, rev share, profile, learnings, mentor page) and
+                  Julian (mentor page, cart, payment), dated May 2023 by their file names.
+                </p>
+              </article>
+              <article>
+                <h3>Data requirements</h3>
+                <p>
+                  Field lists for team member details (join date, FLQA expiry, mentor, agent ID,
+                  transaction count, GCI sum, total revenue share, cap %) and for lead capture.
+                </p>
+              </article>
+              <article>
+                <h3>Real commission data</h3>
+                <p>
+                  A sample commission fee breakdown (agent split before expenses, capped transaction
+                  fee, broker review and mentor fees, net payment), used to design the DA review.
+                </p>
+              </article>
+              <article>
+                <h3>Stakeholder review notes</h3>
+                <p>Phase 2 and Phase 3 feedback lists and a captured Phase 3 review discussion (see Process).</p>
+              </article>
+            </div>
+            <div class="pair">
+              <figure class="shot">
+                <a class="shot-open" href="assets/03-scan-sketch.webp" data-lightbox>
+                  <span class="visually-hidden">Enlarge. </span>
+                  <img
+                    src="assets/03-scan-sketch.webp"
+                    width="581"
+                    height="800"
+                    alt="Hand-drawn phone sketches labeled Max, covering home, revenue share, profile, learnings, and a mentor page."
+                    loading="lazy"
+                  />
+                  <span class="shot-badge" aria-hidden="true">Enlarge</span>
+                </a>
+                <figcaption>
+                  Paper sketches for Max: home, revenue share, profile, learnings, and mentor page.
+                  The export’s file name dates the sketches to May 2023.
+                </figcaption>
+              </figure>
+              <figure class="shot">
+                <a class="shot-open" href="assets/04-whiteboard-photo.webp" data-lightbox>
+                  <span class="visually-hidden">Enlarge. </span>
+                  <img
+                    src="assets/04-whiteboard-photo.webp"
+                    width="800"
+                    height="590"
+                    alt="Hand-drawn phone sketches labeled Julian, covering a mentee page, a cart, and payment."
+                    loading="lazy"
+                  />
+                  <span class="shot-badge" aria-hidden="true">Enlarge</span>
+                </a>
+                <figcaption>Sketches for Julian: mentee page, cart, and payment.</figcaption>
+              </figure>
+            </div>
+            <figure class="shot">
+              <a class="shot-open" href="assets/05-reference-image.webp" data-lightbox>
+                <span class="visually-hidden">Enlarge. </span>
+                <img
+                  src="assets/05-reference-image.webp"
+                  width="800"
+                  height="389"
+                  alt="Existing My eXp Revenue Share screen with FLA, FLQA, new agents, revenue share levels, unpaid, expected next, and last paid."
+                  loading="lazy"
+                />
+                <span class="shot-badge" aria-hidden="true">Enlarge</span>
+              </a>
+              <figcaption>
+                Existing My eXp Revenue Share screen used as a current-product reference: FLA, FLQA,
+                new agents, rev share levels, unpaid, expected next, and last paid.
+              </figcaption>
+            </figure>
+            <aside class="callout">
+              <p class="callout-lead">To add</p>
+              <p>
+                <mark class="todo">[Add: research methods and participants, e.g. interviews with agents or settlement specialists, number of participants, usability tests. The file does not record these.]</mark>
+              </p>
+            </aside>
+          </section>
+
+          <section id="goals">
+            <p class="kicker">05 — Goals and success metrics</p>
+            <h2>Goals and success metrics</h2>
+            <p>These goals are inferred from the design notes and screens. Confirm or reword them before publishing.</p>
+            <ol>
+              <li>Let agents finish commission splits inside My eXp in one guided flow, instead of across separate upload, form and review tabs.</li>
+              <li>Skip splits entirely for solo agents and go straight to sending the DA.</li>
+              <li>Make the DA easy to verify: a readable fee breakdown, view and download, and Approve or Request change with notes.</li>
+              <li>Keep agents informed from DA to deposit through in-app and push notifications.</li>
+              <li>Give the same experience on web and mobile.</li>
+            </ol>
+            <div class="table-wrap">
+              <table>
+                <caption>Metrics the file does not quantify. Baseline and result cells are still open.</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Metric</th>
+                    <th scope="col">Baseline</th>
+                    <th scope="col">Result</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Time to complete splits</th>
+                    <td><mark class="todo">[Add]</mark></td>
+                    <td><mark class="todo">[Add]</mark></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">DA change-request rate</th>
+                    <td><mark class="todo">[Add]</mark></td>
+                    <td><mark class="todo">[Add]</mark></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Splits submitted without settlement-specialist rework</th>
+                    <td><mark class="todo">[Add]</mark></td>
+                    <td><mark class="todo">[Add]</mark></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Time from close to payout</th>
+                    <td><mark class="todo">[Add]</mark></td>
+                    <td><mark class="todo">[Add]</mark></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Agent adoption of the mobile app</th>
+                    <td><mark class="todo">[Add]</mark></td>
+                    <td><mark class="todo">[Add]</mark></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section id="process">
+            <p class="kicker">06 — Process and iterations</p>
+            <h2>Process and iterations</h2>
+            <ol class="steps">
+              <li>
+                <h3>Personas</h3>
+                <p>Max, Julian and Alex, each with needs, challenges and scenarios.</p>
+              </li>
+              <li>
+                <h3>Sketches and wireframes</h3>
+                <p>
+                  Paper sketches, then mobile wireframes: three home options, home variants by
+                  lifecycle (before active, under 30 days, over 30 days), learnings, cart and
+                  checkout, notifications, profile, my team, team member detail, revenue share, my
+                  payments.
+                </p>
+              </li>
+              <li>
+                <h3>Design: mobile and web</h3>
+                <p>
+                  Splash and onboarding, day-one and week-by-week home screens per persona, invite,
+                  learnings, tools, my payments, team leads, my leads, notifications; web home and
+                  my mentees.
+                </p>
+              </li>
+              <li>
+                <h3>Phase 2: Transaction module</h3>
+                <p>
+                  Old transaction flow with document upload; Transaction flow 2.A with document
+                  upload and autofill, a staff-side document review, a Chrome extension uploader;
+                  then the new Splits form, DA approval cases and settlement notifications; a
+                  simpler mobile version and a no-splits flow for solo agents.
+                </p>
+              </li>
+              <li>
+                <h3>Phase 2: All modules (web)</h3>
+                <p>
+                  Dashboard, my payments, paycycle calendar, wallet, profile, rev share details,
+                  invoices, LUCY joining bot, team invites, documents, learnings, affiliated
+                  services, ICON production home cards.
+                </p>
+              </li>
+              <li>
+                <h3>Phase 3 (web and mobile)</h3>
+                <p>
+                  New joining and sign-up, ICA signing, sponsor questions, payment details, profile
+                  per role, My Wallet (renamed from Payment method / bank account), team invites,
+                  influencer group rev share reports.
+                </p>
+              </li>
+              <li>
+                <h3>Current app flow design</h3>
+                <p>
+                  Web and mobile flows brought together: consolidated navigation, YTD Income
+                  (earnings), documents, wallet, notifications, transactions and the new splits
+                  form.
+                </p>
+              </li>
+            </ol>
+
+            <div class="block">
+              <h3>Feedback that shaped later iterations</h3>
+              <ul>
+                <li>Set up the design system to eXp’s design guidelines for both mobile and web.</li>
+                <li>Make the header sticky on all web pages, create a Tabs component, add a percentage to progress bars.</li>
+                <li>
+                  Cut the left nav to 12 items: Home (Tools), My trainings, My transactions, My
+                  earnings, My wallet, My documents, My team, Reports, Notifications, Affiliated
+                  services, Edit profile, Get help.
+                </li>
+                <li>Add a “Do you have a sponsor?” question, a sponsor detail page and a team version of the join bot.</li>
+                <li>My commission: add referrals to “Amount received”, a filter for unpaid on web, and a link to the paycycle calendar.</li>
+                <li>On web, offer a download link for the iOS and Play Store apps.</li>
+              </ul>
+            </div>
+
+            <figure class="shot shot--narrow">
+              <a class="shot-open" href="assets/02-wireframe-home.webp" data-lightbox>
+                <span class="visually-hidden">Enlarge. </span>
+                <img
+                  src="assets/02-wireframe-home.webp"
+                  width="283"
+                  height="1024"
+                  alt="Mobile wireframe of Max’s home with a training card, team agreement, team leads, my team, and continue learnings."
+                  loading="lazy"
+                />
+                <span class="shot-badge" aria-hidden="true">Enlarge</span>
+              </a>
+              <figcaption>
+                Mobile wireframe of Max’s home: team agreement, team leads, invite, and continue
+                learnings.
+              </figcaption>
+            </figure>
+
+            <figure class="shot">
+              <a class="shot-open" href="assets/24-transaction-flow-2A-overview.webp" data-lightbox>
+                <span class="visually-hidden">Enlarge. </span>
+                <img
+                  src="assets/24-transaction-flow-2A-overview.webp"
+                  width="1600"
+                  height="965"
+                  alt="Zoomed-out Figma board of Transaction flow 2.A, with rows of agent screens and a staff-side column."
+                  loading="lazy"
+                />
+                <span class="shot-badge" aria-hidden="true">Enlarge</span>
+              </a>
+              <figcaption>
+                Transaction flow 2.A on the Figma board: the agent path, including upload and
+                autofill, beside a staff-side column.
+              </figcaption>
+            </figure>
+
+            <figure class="shot">
+              <a class="shot-open" href="assets/27-new-transaction-autofilled.webp" data-lightbox>
+                <span class="visually-hidden">Enlarge. </span>
+                <img
+                  src="assets/27-new-transaction-autofilled.webp"
+                  width="806"
+                  height="1024"
+                  alt="Create Transaction screen with a purchase agreement attached and address, price, and date fields filled in."
+                  loading="lazy"
+                />
+                <span class="shot-badge" aria-hidden="true">Enlarge</span>
+              </a>
+              <figcaption>
+                Create Transaction with a purchase agreement uploaded and the transaction fields
+                filled from the document.
+              </figcaption>
+            </figure>
+
+            <figure class="shot">
+              <a class="shot-open" href="assets/25-staff-side.webp" data-lightbox>
+                <span class="visually-hidden">Enlarge. </span>
+                <img
+                  src="assets/25-staff-side.webp"
+                  width="1024"
+                  height="777"
+                  alt="Staff document review list with verified, rejected, and submitted files, plus review actions."
+                  loading="lazy"
+                />
+                <span class="shot-badge" aria-hidden="true">Enlarge</span>
+              </a>
+              <figcaption>
+                Staff-side document review: search and filter, with a status on each file and
+                review actions.
+              </figcaption>
+            </figure>
+
+            <figure class="shot">
+              <a class="shot-open" href="assets/26-chrome-ext-agent.webp" data-lightbox>
+                <span class="visually-hidden">Enlarge. </span>
+                <img
+                  src="assets/26-chrome-ext-agent.webp"
+                  width="1024"
+                  height="668"
+                  alt="My eXp document uploader with a drag-and-drop area and a 50 megabyte file limit."
+                  loading="lazy"
+                />
+                <span class="shot-badge" aria-hidden="true">Enlarge</span>
+              </a>
+              <figcaption>Document uploader from the Chrome extension path in Transaction flow 2.A.</figcaption>
+            </figure>
+          </section>
+
+          <section id="flow">
+            <p class="kicker">07 — The splits flow, end to end</p>
+            <h2>The splits flow, end to end</h2>
+            <div class="flow" aria-label="Splits flow from SkySlope to deposit">
+              <div class="flow-col">
+                <div class="node node--end">
+                  <p class="node-title">Transaction in SkySlope</p>
+                  <p>Commission tab: “Manage Splits”, Go to My eXp</p>
+                </div>
+                <div class="node node--decision">
+                  <p class="node-title">Solo agent on this transaction?</p>
+                </div>
+              </div>
+              <div class="flow-split">
+                <div class="flow-arm">
+                  <p class="edge"><span>Yes</span></p>
+                  <div class="node">
+                    <p class="node-title">Send DA</p>
+                    <p>No splits needed</p>
+                  </div>
+                </div>
+                <div class="flow-arm">
+                  <p class="edge"><span>No</span></p>
+                  <div class="node">
+                    <p class="node-title">1. Sales Info</p>
+                    <p>Listing commission, personal sale, bonuses, concessions, earnest money</p>
+                  </div>
+                  <div class="node">
+                    <p class="node-title">2. TC &amp; Referral</p>
+                    <p>Transaction coordinator, referral, primary eXp agent</p>
+                  </div>
+                  <div class="node">
+                    <p class="node-title">3. Splits</p>
+                    <p>Per-agent %, fee defaults, TC fee</p>
+                  </div>
+                  <p class="edge"><span>Save &amp; Complete</span></p>
+                </div>
+              </div>
+              <div class="flow-col">
+                <div class="node">
+                  <p class="node-title">DA sent to title company</p>
+                  <p>Agent notified</p>
+                </div>
+                <div class="node node--decision">
+                  <p class="node-title">DA correct?</p>
+                </div>
+              </div>
+              <div class="flow-split">
+                <div class="flow-arm">
+                  <p class="edge"><span>No</span></p>
+                  <div class="node node--loop">
+                    <p class="node-title">Request change</p>
+                    <p>Agent adds notes. Returns to the DA.</p>
+                  </div>
+                </div>
+                <div class="flow-arm">
+                  <p class="edge"><span>Yes</span></p>
+                  <div class="node">
+                    <p class="node-title">Approve DA</p>
+                    <p>Status: Approved</p>
+                  </div>
+                </div>
+              </div>
+              <div class="flow-col">
+                <div class="node node--end">
+                  <p class="node-title">Settlement verified, payment initiated, deposit</p>
+                </div>
+              </div>
+            </div>
+            <p>
+              On mobile the same form runs in four steps (Sales Info, Agents Involved, Agent
+              Splits, Review &amp; Submit). A DA can also be approved straight from its
+              notification.
+            </p>
+          </section>
+
+          <section id="decisions">
+            <p class="kicker">08 — Key design decisions</p>
+            <h2>Key design decisions</h2>
+            <ol class="decisions">
+              <li>
+                <span class="num">01</span>
+                <h3>Two tabs instead of three</h3>
+                <p>
+                  The old Upload documents / Splits Form / DA Review tabs became Commission Splits
+                  and DA Review on one Transaction Details page, so splits and their result stay
+                  side by side.
+                </p>
+              </li>
+              <li>
+                <span class="num">02</span>
+                <h3>A three-step stepper for a dense form</h3>
+                <p>
+                  Sales Info, then TC &amp; Referral, then Splits break dozens of fields into chunks
+                  the agent can finish one at a time, with Back and Next Step on each.
+                </p>
+              </li>
+              <li>
+                <span class="num">03</span>
+                <h3>Yes/No questions that reveal their inputs</h3>
+                <p>
+                  “Are there any bonuses/additions?” and similar questions show their inputs only on
+                  Yes. The team’s note: “yes has input, no removes input”.
+                </p>
+              </li>
+              <li>
+                <span class="num">04</span>
+                <h3>Defaults the agent only edits by exception</h3>
+                <p>
+                  Bonuses and concessions split the same as commission, and each agent pays their
+                  own capping fee and eXp commission by default. Review and risk-management fees
+                  follow the commission split unless the agent says otherwise.
+                </p>
+              </li>
+              <li>
+                <span class="num">05</span>
+                <h3>One split table for the whole team</h3>
+                <p>
+                  Each agent’s commission, bonus, concession, capping fee and eXp commission sit in
+                  one sortable table with Add Agents, which suits team leads like Max.
+                </p>
+              </li>
+              <li>
+                <span class="num">06</span>
+                <h3>A persistent transaction summary</h3>
+                <p>
+                  Address, status, a Buyer/Seller toggle, listing sales price, cap amount left and
+                  scheduled close date stay pinned above every step.
+                </p>
+              </li>
+              <li>
+                <span class="num">07</span>
+                <h3>A short path for solo agents</h3>
+                <p>
+                  “Are you a solo agent on this transaction?” Yes goes straight to Send DA, as the
+                  team’s notes asked.
+                </p>
+              </li>
+              <li>
+                <span class="num">08</span>
+                <h3>A DA review agents can verify</h3>
+                <p>
+                  The commission fee breakdown collapses, the PDF can be viewed or downloaded, and
+                  there are two clear outcomes: Approve, or Request change with notes. Status tags
+                  (Change Requested, Approved) and View History follow.
+                </p>
+              </li>
+              <li>
+                <span class="num">09</span>
+                <h3>Tagged notifications</h3>
+                <p>
+                  Settlement and DA events are tagged Action Required or Information and link back
+                  to SkySlope where the work lives.
+                </p>
+              </li>
+              <li>
+                <span class="num">10</span>
+                <h3>Meet agents in SkySlope</h3>
+                <p>
+                  A “Manage Splits” card on SkySlope’s Commission tab links to My eXp, so agents
+                  start splits from the tool they already use.
+                </p>
+              </li>
+            </ol>
+          </section>
+
+          <section id="walkthrough">
+            <p class="kicker">09 — Final designs walkthrough</p>
+            <h2>Final designs walkthrough</h2>
+
+            <div class="block" id="compare">
+              <h3>Before and after</h3>
+              <p>
+                Upload documents, Splits Form, and DA Review were three tabs. The new Transaction
+                Details page keeps Commission Splits and DA Review together, and walks the splits
+                form as Sales Info, TC &amp; Referral, and Splits.
+              </p>
+              <div class="compare">
+                <figure class="shot">
+                  <p class="compare-kicker">Before</p>
+                  <h3>Three separate tabs</h3>
+                  <a class="shot-open" href="assets/17-old-upload-docs.webp" data-lightbox>
+                    <span class="visually-hidden">Enlarge. </span>
+                    <img
+                      src="assets/17-old-upload-docs.webp"
+                      width="1024"
+                      height="666"
+                      alt="Earlier Transaction Details screen with three tabs: Upload documents, Splits Form, and DA Review. Upload documents is selected."
+                      loading="lazy"
+                    />
+                    <span class="shot-badge" aria-hidden="true">Enlarge</span>
+                  </a>
+                  <figcaption>
+                    Old transaction flow. Three tabs — Upload documents, Splits Form, and DA Review
+                    — start with a document dropzone.
+                  </figcaption>
+                </figure>
+                <figure class="shot">
+                  <p class="compare-kicker compare-kicker--after">After</p>
+                  <h3>One guided stepper</h3>
+                  <a class="shot-open" href="assets/10-splits-sales-info.webp" data-lightbox>
+                    <span class="visually-hidden">Enlarge. </span>
+                    <img
+                      src="assets/10-splits-sales-info.webp"
+                      width="1024"
+                      height="975"
+                      alt="New Commission Splits screen, step 1 of 3, Sales Info, with Yes and No questions that reveal amount fields, above a Next Step button."
+                      loading="lazy"
+                    />
+                    <span class="shot-badge" aria-hidden="true">Enlarge</span>
+                  </a>
+                  <figcaption>
+                    New flow. Commission Splits and DA Review sit on one page. Step 1, Sales Info,
+                    asks Yes/No questions and shows inputs only when the answer is Yes.
+                  </figcaption>
+                </figure>
+              </div>
+            </div>
+
+            <div class="block">
+              <h3>Entry from SkySlope</h3>
+              <p>
+                The SkySlope Commission tab shows the transaction details plus a “Manage Splits”
+                card that explains splits and links to My eXp. A later variant adds a
+                closing-document checklist (closing settlement statement, copies of agent and eXp
+                checks, pay at closing or by direct deposit) with Attach and Unaccept actions.
+              </p>
+            </div>
+            <figure class="shot">
+              <a class="shot-open" href="assets/15-splits-notification.webp" data-lightbox>
+                <span class="visually-hidden">Enlarge. </span>
+                <img
+                  src="assets/15-splits-notification.webp"
+                  width="1024"
+                  height="729"
+                  alt="SkySlope Commission tab with a Manage Splits card and a Go to My eXp button."
+                  loading="lazy"
+                />
+                <span class="shot-badge" aria-hidden="true">Enlarge</span>
+              </a>
+              <figcaption>
+                SkySlope Commission tab. The Manage Splits card explains the flow and links to My
+                eXp.
+              </figcaption>
+            </figure>
+            <figure class="shot">
+              <a class="shot-open" href="assets/28-skyslope-splits-added-fields.webp" data-lightbox>
+                <span class="visually-hidden">Enlarge. </span>
+                <img
+                  src="assets/28-skyslope-splits-added-fields.webp"
+                  width="1024"
+                  height="815"
+                  alt="SkySlope Commission tab with a closing document checklist: settlement statement, agent checks, eXp check, and pay at closing, each with Attach and Unaccept."
+                  loading="lazy"
+                />
+                <span class="shot-badge" aria-hidden="true">Enlarge</span>
+              </a>
+              <figcaption>
+                Later SkySlope Commission tab: a closing-document checklist with Attach and
+                Unaccept.
+              </figcaption>
+            </figure>
+
+            <div class="block">
+              <h3>Step 1: Sales Info</h3>
+              <p>
+                The agent enters the listing commission (amount or %), says whether it is a personal
+                sale, adds bonuses and concessions (amount or %, description, type), and says
+                whether eXp holds the earnest money, giving its amount and date.
+              </p>
+            </div>
+            <figure class="shot">
+              <a class="shot-open" href="assets/10-splits-sales-info.webp" data-lightbox>
+                <span class="visually-hidden">Enlarge. </span>
+                <img
+                  src="assets/10-splits-sales-info.webp"
+                  width="1024"
+                  height="975"
+                  alt="Sales Info, step 1 of the splits form: listing commission, personal sale, bonuses, concessions, and earnest money."
+                  loading="lazy"
+                />
+                <span class="shot-badge" aria-hidden="true">Enlarge</span>
+              </a>
+              <figcaption>
+                Step 1, Sales Info. The transaction summary stays pinned, and Yes/No questions reveal
+                their fields only when the answer is Yes.
+              </figcaption>
+            </figure>
+
+            <div class="block">
+              <h3>Step 2: TC &amp; Referral</h3>
+              <p>
+                The agent says whether a transaction coordinator is paid, whether they are an eXp
+                agent, and whether they should appear on the DA, then gives their name and email.
+                Referral details follow (name, email, brokerage, agent, %), with a prompt to upload
+                the W2 and referral agreement to SkySlope. Last come any bonuses or concessions on
+                the referral and who the primary eXp agent is.
+              </p>
+            </div>
+            <figure class="shot">
+              <a class="shot-open" href="assets/14-splits-tc-referral.webp" data-lightbox>
+                <span class="visually-hidden">Enlarge. </span>
+                <img
+                  src="assets/14-splits-tc-referral.webp"
+                  width="1006"
+                  height="1024"
+                  alt="Splits form step 2, TC and Referral, with transaction coordinator questions, referral fields, and the primary eXp agent."
+                  loading="lazy"
+                />
+                <span class="shot-badge" aria-hidden="true">Enlarge</span>
+              </a>
+              <figcaption>
+                Step 2, TC &amp; Referral: transaction coordinator, referral, and the primary eXp
+                agent, with Back and Next Step.
+              </figcaption>
+            </figure>
+
+            <div class="block">
+              <h3>Step 3: Splits</h3>
+              <p>
+                The per-agent table sets commission, bonus, concession, capping fee and eXp
+                commission. Yes/No overrides cover the transaction review fee and risk management
+                fee, followed by the TC fee assignment and any fees between agents. Save &amp;
+                Complete ends the step.
+              </p>
+            </div>
+            <figure class="shot">
+              <a class="shot-open" href="assets/11-splits-splits.webp" data-lightbox>
+                <span class="visually-hidden">Enlarge. </span>
+                <img
+                  src="assets/11-splits-splits.webp"
+                  width="1024"
+                  height="1000"
+                  alt="Splits table listing each agent’s commission, bonus, concession, capping fee, and eXp commission, plus fee questions and Save and Complete."
+                  loading="lazy"
+                />
+                <span class="shot-badge" aria-hidden="true">Enlarge</span>
+              </a>
+              <figcaption>
+                Splits: one table for every agent on the deal, fee defaults underneath, and Save
+                &amp; Complete.
+              </figcaption>
+            </figure>
+
+            <div class="block">
+              <h3>DA review and approval</h3>
+              <p>
+                “DA sent to Title Company” shows the DA as a PDF card with the full commission fee
+                breakdown. The approval state reads “Please review the DA for correctness…” and
+                offers Request change with notes. Once approved: “Your pending transaction is
+                visible under my payment. Once the closing completes, we will let you know when the
+                money is in your bank.”
+              </p>
+            </div>
+            <figure class="shot">
+              <a class="shot-open" href="assets/12-da-review.webp" data-lightbox>
+                <span class="visually-hidden">Enlarge. </span>
+                <img
+                  src="assets/12-da-review.webp"
+                  width="798"
+                  height="1024"
+                  alt="DA Review tab stating the DA was sent to the title company, with a PDF card and an expanded commission fee breakdown."
+                  loading="lazy"
+                />
+                <span class="shot-badge" aria-hidden="true">Enlarge</span>
+              </a>
+              <figcaption>
+                DA sent to the title company: PDF card, view and download, and the commission fee
+                breakdown.
+              </figcaption>
+            </figure>
+            <figure class="shot">
+              <a class="shot-open" href="assets/18-da-change-requested.webp" data-lightbox>
+                <span class="visually-hidden">Enlarge. </span>
+                <img
+                  src="assets/18-da-change-requested.webp"
+                  width="1024"
+                  height="870"
+                  alt="Approve Disbursement Authorization screen with a Change Requested tag on the DA PDF card."
+                  loading="lazy"
+                />
+                <span class="shot-badge" aria-hidden="true">Enlarge</span>
+              </a>
+              <figcaption>
+                Change requested. The DA card carries a Change Requested tag after the agent asks
+                for a correction.
+              </figcaption>
+            </figure>
+            <figure class="shot">
+              <a class="shot-open" href="assets/21-da-approved.webp" data-lightbox>
+                <span class="visually-hidden">Enlarge. </span>
+                <img
+                  src="assets/21-da-approved.webp"
+                  width="1024"
+                  height="895"
+                  alt="Approved DA screen with view, download, an Approved tag, and a View History button."
+                  loading="lazy"
+                />
+                <span class="shot-badge" aria-hidden="true">Enlarge</span>
+              </a>
+              <figcaption>
+                Approved DA, with view, download, an Approved tag, and View History.
+              </figcaption>
+            </figure>
+
+            <div class="block">
+              <h3>Mobile</h3>
+              <p>
+                The mobile version has the commission splits screen with the solo-agent question and
+                Send DA, the four-step splits form, DA sent to title, and a notifications list
+                covering settlement documents verified, statement needs correction, and DA sent to
+                title.
+              </p>
+            </div>
+            <div class="phones">
+              <figure class="shot">
+                <a class="shot-open" href="assets/13-mobile-commission-splits.webp" data-lightbox>
+                  <span class="visually-hidden">Enlarge. </span>
+                  <img
+                    src="assets/13-mobile-commission-splits.webp"
+                    width="210"
+                    height="1024"
+                    alt="Mobile commission splits screen asking if the agent is solo on the transaction, with Send DA and a fee breakdown."
+                    loading="lazy"
+                  />
+                  <span class="shot-badge" aria-hidden="true">Enlarge</span>
+                </a>
+                <figcaption>Solo-agent question and Send DA, with the fee breakdown below.</figcaption>
+              </figure>
+              <figure class="shot">
+                <a class="shot-open" href="assets/19-mobile-splits-sales-info.webp" data-lightbox>
+                  <span class="visually-hidden">Enlarge. </span>
+                  <img
+                    src="assets/19-mobile-splits-sales-info.webp"
+                    width="235"
+                    height="1024"
+                    alt="Mobile splits form on the Agents Involved step, one of four steps: Sales Info, Agents Involved, Agent Splits, and Review and Submit."
+                    loading="lazy"
+                  />
+                  <span class="shot-badge" aria-hidden="true">Enlarge</span>
+                </a>
+                <figcaption>
+                  Four-step mobile form. This frame is Agents Involved: coordinator, referral, and
+                  additional agents.
+                </figcaption>
+              </figure>
+              <figure class="shot">
+                <a class="shot-open" href="assets/20-mobile-da-notification.webp" data-lightbox>
+                  <span class="visually-hidden">Enlarge. </span>
+                  <img
+                    src="assets/20-mobile-da-notification.webp"
+                    width="371"
+                    height="1024"
+                    alt="Mobile notifications list with settlement and DA events tagged Action Required or Information, linking to SkySlope."
+                    loading="lazy"
+                  />
+                  <span class="shot-badge" aria-hidden="true">Enlarge</span>
+                </a>
+                <figcaption>
+                  Notifications tagged Action Required or Information, with links back to SkySlope.
+                </figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <section id="platform">
+            <p class="kicker">10 — Beyond splits</p>
+            <h2>Beyond splits: the wider My eXp app</h2>
+            <p>Splits sits inside a larger agent app that the same file designs across web and mobile.</p>
+            <div class="table-wrap">
+              <table>
+                <caption>Modules designed in the same file, beyond the splits form.</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Module</th>
+                    <th scope="col">What the file designs</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Joining (LUCY bot)</th>
+                    <td>Chat-style join application, ICA review and signing, sponsor questions, card and bank details, individual and bulk team joining</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Home</th>
+                    <td>Variants by persona and lifecycle; GCI and revenue share cards, trainings, team stars, team’s leads, mentoring and event cards</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Transactions</th>
+                    <td>Lists for drafts, pending, closed and settled; create transaction with document autofill; splits; DA; settlements</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">YTD Income / Earnings</th>
+                    <td>My commissions, rev share group levels, unpaid, expected next, last paid, commission breakdown, filters</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Reports</th>
+                    <td>Team reports, influencer group rev share, offboarding overview</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Paycycle and billings</th>
+                    <td>Paycycle calendar, invoices, transaction history</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Wallet</th>
+                    <td>Payment methods, add card or bank, OTP, delete; single and multiple card cases</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Team</th>
+                    <td>Invite team member, associate or non-eXp agent; team member detail and statuses</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Profile</th>
+                    <td>Personal details, licenses, MLS, state broker, mentees, mentor, sponsor, awards</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Documents</th>
+                    <td>Joining, transaction, settlement, team and tax documents</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Training, notifications, affiliated services</th>
+                    <td>Learnings, rev share sender and receiver notifications, service listing, cart and checkout</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <figure class="shot">
+              <a class="shot-open" href="assets/23-web-home.webp" data-lightbox>
+                <span class="visually-hidden">Enlarge. </span>
+                <img
+                  src="assets/23-web-home.webp"
+                  width="1024"
+                  height="729"
+                  alt="Web home with GCI and revenue share cards, trainings, team stars, and the team’s leads."
+                  loading="lazy"
+                />
+                <span class="shot-badge" aria-hidden="true">Enlarge</span>
+              </a>
+              <figcaption>
+                Web home: GCI and revenue share, trainings to accelerate, team stars, and the
+                team’s leads.
+              </figcaption>
+            </figure>
+            <figure class="shot">
+              <a class="shot-open" href="assets/16-transaction-list.webp" data-lightbox>
+                <span class="visually-hidden">Enlarge. </span>
+                <img
+                  src="assets/16-transaction-list.webp"
+                  width="1024"
+                  height="669"
+                  alt="Transactions list filtered to Pending, with search, Drafts, Closed, and Settle tabs."
+                  loading="lazy"
+                />
+                <span class="shot-badge" aria-hidden="true">Enlarge</span>
+              </a>
+              <figcaption>Transactions, with Drafts, Pending, Closed, and Settle.</figcaption>
+            </figure>
+            <figure class="shot">
+              <a class="shot-open" href="assets/22-earnings.webp" data-lightbox>
+                <span class="visually-hidden">Enlarge. </span>
+                <img
+                  src="assets/22-earnings.webp"
+                  width="1024"
+                  height="729"
+                  alt="YTD Income screen with a revenue share group chart, unpaid, expected next, and last paid."
+                  loading="lazy"
+                />
+                <span class="shot-badge" aria-hidden="true">Enlarge</span>
+              </a>
+              <figcaption>
+                YTD Income: revenue share group levels, unpaid, expected next, and last paid, with
+                a link to the paycycle calendar.
+              </figcaption>
+            </figure>
+          </section>
+
+          <section id="outcomes">
+            <p class="kicker">11 — Outcomes and impact</p>
+            <h2>Outcomes and impact</h2>
+            <aside class="callout">
+              <p class="callout-lead">Not in the file</p>
+              <p>
+                <mark class="todo">[Add: what shipped and when, adoption, and any measured change in splits completion, DA corrections or time to payout. Also add stakeholder or agent feedback you can quote and attribute.]</mark>
+              </p>
+            </aside>
+            <p>
+              What the file does show: the splits and DA flow designed for web and mobile, carried
+              through three phases into a “Current app flow design” for both platforms.
+            </p>
+          </section>
+
+          <section id="learnings">
+            <p class="kicker">12 — Learnings and next steps</p>
+            <h2>Learnings and next steps</h2>
+            <div class="proscons">
+              <section>
+                <h3>What worked</h3>
+                <ul>
+                  <li>Personas shaped role-specific home, team and earnings views</li>
+                  <li>Defaults and Yes/No disclosure kept a heavy financial form manageable</li>
+                  <li>Designing web and mobile together kept the flows consistent</li>
+                </ul>
+              </section>
+              <section>
+                <h3>Open threads in the file</h3>
+                <ul>
+                  <li>“New version (WIP)” of the mobile Transaction module</li>
+                  <li>“POST Feedbacks WIP” on the web transaction page</li>
+                  <li>Design system alignment to eXp guidelines listed as a to-do</li>
+                </ul>
+              </section>
+            </div>
+            <p>
+              <mark class="todo">[Add: your personal learnings, and the next steps you would take, e.g. usability-testing the splits form with team leads, or instrumenting the flow in your analytics tool.]</mark>
+            </p>
+          </section>
+
+          <section id="gaps">
+            <p class="kicker">13 — Information still to add</p>
+            <h2>Information still to add</h2>
+            <ul class="gaps">
+              <li>
+                <span class="gap-mark" aria-hidden="true"></span>
+                <span><span class="visually-hidden">Open. </span>Your exact role and what you owned vs. Pranjali Binwani</span>
+              </li>
+              <li>
+                <span class="gap-mark" aria-hidden="true"></span>
+                <span><span class="visually-hidden">Open. </span>End date, phase dates and launch date (only the September 13th, 2023 start is in the file)</span>
+              </li>
+              <li>
+                <span class="gap-mark" aria-hidden="true"></span>
+                <span><span class="visually-hidden">Open. </span>Wider team: engineering, product, settlement or ops stakeholders beyond the PM</span>
+              </li>
+              <li>
+                <span class="gap-mark" aria-hidden="true"></span>
+                <span><span class="visually-hidden">Open. </span>Problem evidence: baseline pain points and figures</span>
+              </li>
+              <li>
+                <span class="gap-mark" aria-hidden="true"></span>
+                <span><span class="visually-hidden">Open. </span>Research methods and participant counts behind the personas</span>
+              </li>
+              <li>
+                <span class="gap-mark" aria-hidden="true"></span>
+                <span><span class="visually-hidden">Open. </span>Success metrics with baselines and results</span>
+              </li>
+              <li>
+                <span class="gap-mark" aria-hidden="true"></span>
+                <span><span class="visually-hidden">Open. </span>What shipped, and the measured impact</span>
+              </li>
+              <li>
+                <span class="gap-mark" aria-hidden="true"></span>
+                <span><span class="visually-hidden">Open. </span>Analytics tool used to measure (e.g. Heap or Mixpanel), if any</span>
+              </li>
+              <li>
+                <span class="gap-mark" aria-hidden="true"></span>
+                <span><span class="visually-hidden">Open. </span>Usability test findings and attributable quotes</span>
+              </li>
+              <li>
+                <span class="gap-mark" aria-hidden="true"></span>
+                <span><span class="visually-hidden">Open. </span>Permission to show eXp and SkySlope screens publicly</span>
+              </li>
+            </ul>
+          </section>
+
+          <section id="appendix">
+            <p class="kicker">14 — Appendix</p>
+            <h2>Appendix</h2>
+            <p>
+              The source notes pointed at individual Figma frames for Sales Info, TC &amp; Referral,
+              Splits, the SkySlope entry, DA review, change requested, the approved DA, the mobile
+              solo-agent and Agents Involved screens, and the old upload-docs flow. Those links are
+              left out here. The screens in Final designs are those frames.
+            </p>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer wrap">
+      <p>
+        Case study by
+        <a href="https://www.linkedin.com/in/suvarnamyneni/" rel="noopener noreferrer">Suvarna Myneni</a>
+      </p>
+      <p class="quiet">AI-Native UX Designer, eXp Realty</p>
+    </footer>
+
+    <dialog id="lightbox" aria-labelledby="lb-cap">
+      <div class="lb-panel">
+        <button type="button" class="lb-close" id="lb-close">Close</button>
+        <button type="button" class="lb-nav lb-prev" id="lb-prev" aria-label="Previous image">‹</button>
+        <img id="lb-img" alt="" />
+        <button type="button" class="lb-nav lb-next" id="lb-next" aria-label="Next image">›</button>
+        <p class="lb-caption" id="lb-cap"></p>
+        <p class="lb-count" id="lb-count"></p>
+      </div>
+    </dialog>
+    <script src="script.js"></script>
+  </body>
+</html>
