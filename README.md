@@ -10,7 +10,7 @@ Design started September 13, 2023, and moved through discovery, Phase 2, and Pha
 
 Published with GitHub Pages from the repository root:
 
-https://suvarnamyneni-project.github.io/splits-case-study/
+https://suvarnamyneni.github.io/splits-case-study/
 
 Locally, open `index.html` in a browser, or serve the folder:
 
