@@ -2,9 +2,9 @@
 
 A static case study of **eXp Splits**, the commission-splits feature in eXp Realty’s My eXp agent app. The study covers the guided splits form, Disbursement Authorization (DA) review, and the wider agent app around it.
 
-**Case study by [Suvarna Myneni](https://www.linkedin.com/in/suvarnamyneni/)**, AI-Native UX Designer, eXp Realty.
+**Case study by [Suvarna Myneni](https://www.linkedin.com/in/suvarnamyneni/).** Senior UX Designer at eXp Realty from February 2023 to September 2025, now AI-Native UX Designer. On Splits she led the end-to-end flow, DA review and approval, mobile, and notifications, in collaboration with designer Pranjali Binwani and project manager Sanjay Patel.
 
-Designers named on the source file cover: Suvarna Myneni and Pranjali Binwani. Project manager: Sanjay Patel. Design started September 13th, 2023.
+Design started September 13, 2023, and moved through discovery, Phase 2, and Phase 3 stakeholder reviews. Some details are generalized to respect confidentiality. Figures in the metrics table are design targets, not measured launch results.
 
 ## View it
 
@@ -24,17 +24,13 @@ There is no build step. The site is plain HTML, CSS, and JavaScript.
 
 ## What’s in the study
 
-- Hero with the one-line summary and role, team, timeline, and tools
+- Hero with the summary and role, team, timeline, and tools
 - Sticky section navigation
-- Problem, personas, research inputs, goals, process, the end-to-end flow, and ten design decisions
+- Problem, personas, research inputs, goals and design targets, process, the end-to-end flow, and ten design decisions
 - Final screens, including a before/after of the old three-tab transaction flow and the new stepper
 - The wider My eXp app (home, transactions, earnings)
-- Outcomes, learnings, and a list of facts the source file does not contain
+- Design outcomes, first-person learnings, and a short note on what is generalized
 - Click any screenshot to enlarge it. Arrow keys move between images; Escape closes the viewer. Without JavaScript, the same control opens the image file directly.
-
-## Placeholders
-
-Highlighted `[Add: …]` and `[Add]` marks are intentional. They are facts the Figma file does not contain: role split, end date, research methods, baselines, results, quotes, and what shipped. They are not filled in here.
 
 ## Screens
 

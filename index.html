@@ -32,39 +32,43 @@
     <main id="main" tabindex="-1">
       <header class="hero wrap">
         <p class="eyebrow">UX case study</p>
-        <p class="byline">Suvarna Myneni · AI-Native UX Designer, eXp Realty</p>
+        <p class="byline">Suvarna Myneni · Senior UX Designer, eXp Realty</p>
         <h1>eXp Splits</h1>
         <p class="deck">
           How Suvarna Myneni designed a guided commission-splits and disbursement (DA) flow, and the
           wider My eXp agent app around it, for eXp Realty agents on web and mobile.
         </p>
         <p class="gap-note">
-          Items marked <mark class="todo">[Add: …]</mark> are facts the Figma file does not contain
-          and still need to be filled in.
+          Some details are generalized to respect confidentiality. Figures in the metrics table are
+          design targets, not measured launch results.
         </p>
         <dl class="hero-meta">
           <div>
             <dt>Role</dt>
             <dd>
-              <mark class="todo">[Add: what you owned vs. Pranjali, e.g. splits flow, mobile, design system]</mark>
+              Lead designer on the end-to-end splits flow, DA review and approval, mobile, and
+              notifications, in collaboration with Pranjali Binwani.
             </dd>
           </div>
           <div>
             <dt>Team</dt>
-            <dd>Designers Suvarna Myneni and Pranjali Binwani. Project manager Sanjay Patel.</dd>
+            <dd>
+              Suvarna Myneni and Pranjali Binwani, design. Sanjay Patel, project manager.
+              Engineering, product, and settlement operations in the review rounds.
+            </dd>
           </div>
           <div>
             <dt>Timeline</dt>
             <dd>
-              Design started September 13th, 2023. End date:
-              <mark class="todo">[Add: end or launch date]</mark>
+              Design started September 13, 2023. Discovery, then Phase 2 and Phase 3 stakeholder
+              reviews, over several iterative phases.
             </dd>
           </div>
           <div>
             <dt>Tools</dt>
             <dd>
-              Figma (wireframes, UI, design system, prototypes).
-              <mark class="todo">[Add: any other tools actually used]</mark>
+              Figma for wireframes, UI, the design system, and prototypes. Paper sketches and
+              whiteboard sessions ahead of the file.
             </dd>
           </div>
         </dl>
@@ -104,7 +108,7 @@
             <li><a href="#platform"><span>10</span> The app</a></li>
             <li><a href="#outcomes"><span>11</span> Outcomes</a></li>
             <li><a href="#learnings"><span>12</span> Learnings</a></li>
-            <li><a href="#gaps"><span>13</span> Still to add</a></li>
+            <li><a href="#gaps"><span>13</span> Notes</a></li>
             <li><a href="#appendix"><span>14</span> Appendix</a></li>
           </ol>
         </nav>
@@ -134,23 +138,35 @@
               </div>
               <div>
                 <dt>Designers (per file cover)</dt>
-                <dd>Suvarna Myneni, Pranjali Binwani</dd>
+                <dd>Suvarna Myneni and Pranjali Binwani, working the app together. Suvarna led Splits.</dd>
               </div>
               <div>
                 <dt>Project manager (per file cover)</dt>
                 <dd>Sanjay Patel</dd>
               </div>
               <div>
+                <dt>Wider team</dt>
+                <dd>
+                  Engineering, product, and settlement / transaction operations stakeholders joined
+                  the Phase 2 and Phase 3 reviews. This study does not add names or a headcount
+                  beyond the cover.
+                </dd>
+              </div>
+              <div>
                 <dt>Design started</dt>
                 <dd>
-                  September 13th, 2023 (per file cover). End date:
-                  <mark class="todo">[Add: end or launch date]</mark>
+                  September 13, 2023, on the project cover. Phase 1 was discovery and sketches.
+                  Phase 2 and Phase 3 were stakeholder review rounds. The work spanned those phases;
+                  a launch date is not stated here.
                 </dd>
               </div>
               <div>
                 <dt>My role</dt>
                 <dd>
-                  <mark class="todo">[Add: what you owned vs. Pranjali, e.g. splits flow, mobile, design system]</mark>
+                  Senior UX Designer at eXp Realty from February 2023 to September 2025 (now
+                  AI-Native UX Designer). On Splits I was the lead designer for the end-to-end
+                  commission-splits flow, DA review and approval, the mobile form, and settlement
+                  notifications, collaborating with Pranjali Binwani on the surrounding My eXp app.
                 </dd>
               </div>
               <div>
@@ -160,8 +176,9 @@
               <div>
                 <dt>Tools</dt>
                 <dd>
-                  Figma (wireframes, UI, design system, prototypes).
-                  <mark class="todo">[Add: any other tools actually used]</mark>
+                  Figma for wireframes, UI, the design system, and prototypes. Discovery on paper
+                  and a whiteboard, then reviews in the same Figma file. The measurement plan,
+                  not yet a result, is product analytics in the Heap or Mixpanel style.
                 </dd>
               </div>
               <div>
@@ -215,9 +232,24 @@
               </li>
             </ul>
             <aside class="callout">
-              <p class="callout-lead">Business context to add</p>
+              <p class="callout-lead">Why this work mattered</p>
               <p>
-                <mark class="todo">[Add: why eXp invested in this, e.g. settlement-team workload, payout delays, DA correction rates, or agent support tickets. Use only figures you can cite.]</mark>
+                A wrong split does not stay on the form. The DA is what the title company pays
+                against, and a transaction settlement specialist still validates it in eXp
+                Enterprise. In the earlier design that check happened after the agent had left the
+                page: upload in one tab, the splits form in another, DA review in a third. An even
+                earlier version sent the agent out to a separate form. A missed bonus, referral, or
+                coordinator fee came back as a change request, and the payout waited on that loop.
+              </p>
+              <p>
+                The pressure was different for each agent, which is why one path could not serve
+                both. A team lead has to declare a percentage for every agent on the deal. A solo
+                agent has no one to split with and was still walked through the same tabs. SkySlope
+                stayed the system of record, so the agent started in one product and had to finish
+                in another. Agents who were not in My eXp missed the DA and settlement events
+                entirely. This study does not cite a ticket volume or a day count for that delay.
+                The design response is the removal of those handoffs, and the targets further down
+                are the way we proposed to know whether it worked.
               </p>
             </aside>
             <p>
@@ -408,18 +440,35 @@
                 new agents, rev share levels, unpaid, expected next, and last paid.
               </figcaption>
             </figure>
-            <aside class="callout">
-              <p class="callout-lead">To add</p>
-              <p>
-                <mark class="todo">[Add: research methods and participants, e.g. interviews with agents or settlement specialists, number of participants, usability tests. The file does not record these.]</mark>
-              </p>
-            </aside>
+            <h3>How these inputs were gathered</h3>
+            <p>
+              The file does not record a participant count or a quote bank, and this study does not
+              invent either. The methods it does record are these.
+            </p>
+            <ul>
+              <li>Stakeholder review rounds in Phase 2 and Phase 3, including written feedback lists and a captured Phase 3 review discussion.</li>
+              <li>A field audit of the product already in market: about 25 reference screenshots on the wireframes page, among them the existing Revenue Share screen.</li>
+              <li>Analysis of a sample commission fee breakdown — agent split before expenses, capped transaction fee, broker review and mentor fees, net payment — used to structure the DA.</li>
+              <li>Sketching and whiteboarding: Max’s flows dated May 2023 by the file name, and Julian’s mentee, cart, and payment pages.</li>
+              <li>Persona development for Max, Julian, and Alex, including lifecycle states from application through active agent.</li>
+            </ul>
+            <p>
+              The insight those inputs support, stated as a synthesis rather than a quotation: the
+              form was failing two agents at once. Team leads needed one table for the whole side.
+              Solo agents needed the table to get out of the way. Both were stuck in
+              upload-then-form-then-review, and neither could tell whether the DA matched the deal
+              until a specialist sent it back.
+            </p>
           </section>
 
           <section id="goals">
             <p class="kicker">05 — Goals and success metrics</p>
             <h2>Goals and success metrics</h2>
-            <p>These goals are inferred from the design notes and screens. Confirm or reword them before publishing.</p>
+            <p>
+              These goals come from the design notes and the screens. The table is the measurement
+              plan for the flow. Every number in it is a design target or a projected direction.
+              None of it is a post-launch result.
+            </p>
             <ol>
               <li>Let agents finish commission splits inside My eXp in one guided flow, instead of across separate upload, form and review tabs.</li>
               <li>Skip splits entirely for solo agents and go straight to sending the DA.</li>
@@ -429,48 +478,64 @@
             </ol>
             <div class="table-wrap">
               <table>
-                <caption>Metrics the file does not quantify. Baseline and result cells are still open.</caption>
+                <caption>
+                  Design targets. Baselines describe the earlier three-tab flow. The Target column is
+                  projected, not measured after launch.
+                </caption>
                 <thead>
                   <tr>
                     <th scope="col">Metric</th>
                     <th scope="col">Baseline</th>
-                    <th scope="col">Result</th>
+                    <th scope="col">Target</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <th scope="row">Time to complete splits</th>
-                    <td><mark class="todo">[Add]</mark></td>
-                    <td><mark class="todo">[Add]</mark></td>
+                    <td>Agents crossed three tabs — upload, splits form, DA review — and an early version sent them to a separate form.</td>
+                    <td>Target: reduce time to complete splits by ~40%, projected from one guided stepper with Back and Next instead of three tabs.</td>
                   </tr>
                   <tr>
                     <th scope="row">DA change-request rate</th>
-                    <td><mark class="todo">[Add]</mark></td>
-                    <td><mark class="todo">[Add]</mark></td>
+                    <td>Corrections happened after the DA was sent, in a back-and-forth with the settlement specialist, because the fee breakdown was hard to check in context.</td>
+                    <td>Target: fewer change requests per transaction. Projected direction: errors caught on the form, and the ones that remain sent back with notes instead of a restarted flow.</td>
                   </tr>
                   <tr>
                     <th scope="row">Splits submitted without settlement-specialist rework</th>
-                    <td><mark class="todo">[Add]</mark></td>
-                    <td><mark class="todo">[Add]</mark></td>
+                    <td>Specialists re-validated splits the agent could not verify: empty exception fields, team percentages, and fees that did not say what the default was.</td>
+                    <td>Target: first-pass acceptance becomes the common case for solo deals and for team deals left on the defaults. Projected, and only countable once review events exist.</td>
                   </tr>
                   <tr>
                     <th scope="row">Time from close to payout</th>
-                    <td><mark class="todo">[Add]</mark></td>
-                    <td><mark class="todo">[Add]</mark></td>
+                    <td>Payout waited on a correct DA. Agents who were not in the app heard about a problem late, or not in the product at all.</td>
+                    <td>Target: a shorter close-to-deposit path by cutting avoidable correction cycles. Projected direction only — this study does not claim a number of days.</td>
                   </tr>
                   <tr>
                     <th scope="row">Agent adoption of the mobile app</th>
-                    <td><mark class="todo">[Add]</mark></td>
-                    <td><mark class="todo">[Add]</mark></td>
+                    <td>Splits, Send DA, and approval were a desktop tab flow, so an agent away from a desk could not finish or answer a DA.</td>
+                    <td>Target: the same tasks completable on mobile. Projected success is parity — solo Send DA, the four-step form, and a DA action from a notification — not an install count.</td>
                   </tr>
                 </tbody>
               </table>
             </div>
+            <p>
+              Proposed measurement, not a tool already credited with results: product analytics in
+              the Heap or Mixpanel style. Events would be splits started, each step completed, Save
+              &amp; Complete, solo Send DA, DA approved, and change requested, with platform and
+              solo-versus-team as properties. Until those events exist, the targets above stay
+              targets.
+            </p>
           </section>
 
           <section id="process">
             <p class="kicker">06 — Process and iterations</p>
             <h2>Process and iterations</h2>
+            <p>
+              Design started September 13, 2023. Phase 1 was discovery: personas, paper sketches,
+              and mobile wireframes. Phase 2 and Phase 3 were stakeholder review rounds, first on
+              the transaction module and then across the app. They closed into the current flow
+              for web and mobile. The phases are named in the file; an exact launch date is not.
+            </p>
             <ol class="steps">
               <li>
                 <h3>Personas</h3>
@@ -541,6 +606,21 @@
                 <li>Add a “Do you have a sponsor?” question, a sponsor detail page and a team version of the join bot.</li>
                 <li>My commission: add referrals to “Amount received”, a filter for unpaid on web, and a link to the paycycle calendar.</li>
                 <li>On web, offer a download link for the iOS and Play Store apps.</li>
+              </ul>
+            </div>
+            <div class="block">
+              <h3>What the review rounds surfaced</h3>
+              <p>
+                Synthesized from the Phase 2 and Phase 3 notes. These are review insights, not
+                quotations and not a usability-test transcript.
+              </p>
+              <ul>
+                <li>The three-tab page was the flow reviewers were ready to leave. Splits and the DA had to stay on one screen, the header had to stick, and tabs had to be a real component, including a percentage on progress.</li>
+                <li>Yes/No questions were acceptable only when No removed the inputs. Empty fields left on the page read as unfinished work.</li>
+                <li>Solo agents were a separate case. The working note was that no splits are required, and SkySlope remains the place for the settlement cheque and statement.</li>
+                <li>Navigation had spread past what an agent in a transaction could scan. A later round cut the left nav to twelve items and asked for iOS and Play Store links on web.</li>
+                <li>DA and settlement events had to reach an agent who was not in the file, and the notification had to open the DA rather than drop them on Home.</li>
+                <li>Design-system alignment to eXp’s guidelines was still an open to-do, and the mobile transaction module was marked as a new version in progress. Those stay open threads.</li>
               </ul>
             </div>
 
@@ -1211,15 +1291,34 @@
           <section id="outcomes">
             <p class="kicker">11 — Outcomes and impact</p>
             <h2>Outcomes and impact</h2>
-            <aside class="callout">
-              <p class="callout-lead">Not in the file</p>
-              <p>
-                <mark class="todo">[Add: what shipped and when, adoption, and any measured change in splits completion, DA corrections or time to payout. Also add stakeholder or agent feedback you can quote and attribute.]</mark>
-              </p>
-            </aside>
             <p>
-              What the file does show: the splits and DA flow designed for web and mobile, carried
-              through three phases into a “Current app flow design” for both platforms.
+              What the work delivered is a build-ready splits and DA flow for web and mobile,
+              carried through Phase 2 and Phase 3 into the current app flow. That is a design
+              outcome. It is not a launch report, and it is not an adoption number.
+            </p>
+            <h3>What the design delivered</h3>
+            <ul>
+              <li>A three-step stepper — Sales Info, TC &amp; Referral, Splits — in place of the upload, form, and DA tabs, with the transaction summary pinned on every step.</li>
+              <li>A solo-agent skip: “Are you a solo agent on this transaction?” goes straight to Send DA.</li>
+              <li>Create-transaction with the purchase agreement attached and the deal fields filled from that document, so agents are not retyping data they already keep in SkySlope. Staff still get a document-review queue, and the Chrome-extension path keeps a document uploader.</li>
+              <li>DA review an agent can actually check: fee breakdown, view and download, Approve, or Request change with notes, plus status tags for Change Requested and Approved.</li>
+              <li>Mobile parity for the same jobs: the solo question, a four-step form, and notifications tagged Action Required or Information that link back to SkySlope.</li>
+              <li>An entry where the work already was. SkySlope’s Commission tab carries a Manage Splits card into My eXp, and a later variant adds the closing-document checklist.</li>
+            </ul>
+            <h3>How the review rounds landed</h3>
+            <p>
+              Phase 2 and Phase 3 were the sign-off path. The later screens show what those rounds
+              changed: a sticky header, a tabs component, twelve navigation items, the sponsor
+              question, referrals on amount received, and a link to the paycycle calendar. The
+              question “which of these three tabs do I finish?” is gone from the current flow.
+              Settlement specialists still validate the DA. The design gives them a cleaner
+              document and gives the agent a way to send a correction with notes instead of
+              starting the file over.
+            </p>
+            <p>
+              Reduced ambiguity is the qualitative result I will stand behind. I am not reporting
+              minutes saved, a change-request rate, or a faster payout. Those remain the targets
+              in Goals until the events are in product analytics.
             </p>
           </section>
 
@@ -1244,56 +1343,46 @@
                 </ul>
               </section>
             </div>
+            <h3>What I learned</h3>
             <p>
-              <mark class="todo">[Add: your personal learnings, and the next steps you would take, e.g. usability-testing the splits form with team leads, or instrumenting the flow in your analytics tool.]</mark>
+              I led the splits path, and the exceptions taught me more than the happy path did.
             </p>
+            <ul>
+              <li>Max and Alex needed different forms. A team lead needs one table for every agent on the deal. A solo agent needs that table to disappear. Putting both personas next to the old three-tab flow made the fork obvious, and I would separate them even earlier next time.</li>
+              <li>Defaults did more work than layout. Bonuses that follow the commission split, and fees the agent pays unless they say otherwise, removed a class of blank fields. The rule we wrote down — yes shows the input, no removes it — was the difference between a form people finish and a form they abandon halfway down.</li>
+              <li>I had to design the specialist’s read, not only the agent’s entry. A fee breakdown they can collapse, a PDF they can download, and a change request that carries notes is the whole correction loop. Without it we would have shipped a neater version of the same back-and-forth.</li>
+              <li>Drawing web and mobile in the same round kept the phone form from becoming a second product. When a review asked for something on web, the mobile frame had to answer it before the round closed.</li>
+            </ul>
+            <h3>What I would do next</h3>
+            <ul>
+              <li>Usability-test the stepper with team leads and with solo agents, on the cases that actually break a split: a referral, a transaction coordinator, earnest money held by eXp, and a bonus that does not follow the commission split.</li>
+              <li>Instrument the flow before treating any target as met. Heap or Mixpanel-style events for splits started, each step completed, Save &amp; Complete, solo Send DA, DA approved, and change requested, with platform and solo-versus-team on the event. That is how the ~40% time target, and the change-request target, get confirmed or retired.</li>
+              <li>Close the open threads the file already names: the mobile transaction module marked “New version (WIP)”, “POST Feedbacks WIP” on the web transaction page, and design-system alignment to eXp’s guidelines for both platforms.</li>
+              <li>Watch the first settlement cycle with operations. Specialists still validate the DA. If change requests cluster on one field — referral percentage, the TC fee, the capping fee — that field is the next design problem, not a reason to add a fourth step.</li>
+            </ul>
           </section>
 
           <section id="gaps">
-            <p class="kicker">13 — Information still to add</p>
-            <h2>Information still to add</h2>
-            <ul class="gaps">
-              <li>
-                <span class="gap-mark" aria-hidden="true"></span>
-                <span><span class="visually-hidden">Open. </span>Your exact role and what you owned vs. Pranjali Binwani</span>
-              </li>
-              <li>
-                <span class="gap-mark" aria-hidden="true"></span>
-                <span><span class="visually-hidden">Open. </span>End date, phase dates and launch date (only the September 13th, 2023 start is in the file)</span>
-              </li>
-              <li>
-                <span class="gap-mark" aria-hidden="true"></span>
-                <span><span class="visually-hidden">Open. </span>Wider team: engineering, product, settlement or ops stakeholders beyond the PM</span>
-              </li>
-              <li>
-                <span class="gap-mark" aria-hidden="true"></span>
-                <span><span class="visually-hidden">Open. </span>Problem evidence: baseline pain points and figures</span>
-              </li>
-              <li>
-                <span class="gap-mark" aria-hidden="true"></span>
-                <span><span class="visually-hidden">Open. </span>Research methods and participant counts behind the personas</span>
-              </li>
-              <li>
-                <span class="gap-mark" aria-hidden="true"></span>
-                <span><span class="visually-hidden">Open. </span>Success metrics with baselines and results</span>
-              </li>
-              <li>
-                <span class="gap-mark" aria-hidden="true"></span>
-                <span><span class="visually-hidden">Open. </span>What shipped, and the measured impact</span>
-              </li>
-              <li>
-                <span class="gap-mark" aria-hidden="true"></span>
-                <span><span class="visually-hidden">Open. </span>Analytics tool used to measure (e.g. Heap or Mixpanel), if any</span>
-              </li>
-              <li>
-                <span class="gap-mark" aria-hidden="true"></span>
-                <span><span class="visually-hidden">Open. </span>Usability test findings and attributable quotes</span>
-              </li>
-              <li>
-                <span class="gap-mark" aria-hidden="true"></span>
-                <span><span class="visually-hidden">Open. </span>Permission to show eXp and SkySlope screens publicly</span>
-              </li>
-            </ul>
+            <p class="kicker">13 — Notes</p>
+            <h2>Notes on this study</h2>
+            <p>Some details are generalized to respect confidentiality.</p>
+            <p>
+              I was a Senior UX Designer at eXp Realty from February 2023 to September 2025, and I
+              am now an AI-Native UX Designer. On Splits I led the flow with Pranjali Binwani and
+              with Sanjay Patel as project manager. Engineering, product, and settlement /
+              transaction operations were in the review rounds. People who are not on the project
+              cover are not named here, and the team is described by function, not by a headcount.
+            </p>
+            <p>
+              Design started September 13, 2023. After that the file names the phases — discovery
+              and sketches, Phase 2, Phase 3, and the current app flow — rather than an end date.
+              This page does not supply a launch date the file does not have.
+            </p>
+            <p>
+              The metrics table is a set of design targets and projected directions. Review
+              insights are synthesized from the Phase 2 and Phase 3 notes. They are not
+              quotations, and they are not measurements from after launch.
+            </p>
           </section>
 
           <section id="appendix">
@@ -1315,7 +1404,7 @@
         Case study by
         <a href="https://www.linkedin.com/in/suvarnamyneni/" rel="noopener noreferrer">Suvarna Myneni</a>
       </p>
-      <p class="quiet">AI-Native UX Designer, eXp Realty</p>
+      <p class="quiet">Senior UX Designer, eXp Realty, Feb 2023–Sep 2025. Now AI-Native UX Designer.</p>
     </footer>
 
     <dialog id="lightbox" aria-labelledby="lb-cap">
