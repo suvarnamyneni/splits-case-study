@@ -1,0 +1,18 @@
+/* responsive.css (2026-11-02): small, additive fixes so this case study fits
+   phones (incl. 280px Galaxy Fold cover), foldables, tablets and big desktops.
+   Loaded last; it only adjusts sizing/wrapping, never content. */
+
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+img, video { max-width: 100%; height: auto; }
+p, li, dd, dt, td, th, figcaption, blockquote, h1, h2, h3, h4 { overflow-wrap: break-word; }
+p a, li a { overflow-wrap: anywhere; }
+
+
+/* Touch screens: larger hit area for top/section nav links (layout unchanged). */
+@media (pointer: coarse) {
+  nav.top a, nav.cs-nav a, nav.toc a, .sticky-head a, .sm-footer-links a { position: relative; }
+  nav.top a::after, nav.cs-nav a::after, nav.toc a::after, .sticky-head a::after, .sm-footer-links a::after {
+    content: ""; position: absolute; left: 0; right: 0; top: 50%;
+    height: 44px; min-height: 100%; transform: translateY(-50%);
+  }
+}
